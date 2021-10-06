@@ -3,7 +3,8 @@ FROM python:3.8-slim-buster
 RUN DEBIAN_FRONTEND=noninteractive apt-get \
     update && \
     apt-get install -y \
-    build-essential
+    build-essential \
+    git
 
 RUN pip install opentimestamps-client
 
