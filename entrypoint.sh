@@ -7,6 +7,8 @@ echo "GITHUB_REF: $GITHUB_REF"
 # Exit if ref is not a tag
 if [[ $2 =~ ^refs/tags* ]]
 then
+    echo "ref is a tag."
+else
     echo "ref is not a tag."
     exit 0
 fi
