@@ -8,6 +8,7 @@ echo "$(gpg --batch --passphrase '' --quick-generate-key "ots-action-key" rsa409
 KEY_ID="$(gpg --list-secret-keys --keyid-format=long --with-colons | awk -F: '/sec:u:4096:1:/ {print $5}')"
 echo "Using key id: $(echo $KEY_ID)"
 
+git config --global user.email "fake@email.com"
 git config --global user.name "OpenTimestamps Github Action"
 git config --global user.signingkey $KEY_ID
 git config --global gpg.program /ots-git-gpg-wrapper.sh
