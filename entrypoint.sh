@@ -9,7 +9,7 @@ echo "hello $1"
 
 # Generate GPG key
 echo "$(gpg --batch --full-generate-key)"
-echo "$(gpg --batch --list-secret-keys --keyid-format=long)"
+echo "$(gpg --list-secret-keys --keyid-format=long)"
 
 TAG_NAME=$(openssl rand -hex 12)
 
