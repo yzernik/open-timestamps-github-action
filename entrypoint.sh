@@ -13,6 +13,7 @@ echo "$(gpg --batch --passphrase '' --quick-generate-key "example-key" rsa4097 c
 echo "$(gpg --list-keys --with-colons  | awk -F: '/fpr:/ {print $10}')"
 KEY_FINGERPRINT="$(gpg --list-keys --with-colons  | awk -F: '/fpr:/ {print $10}')"
 
+git config --global user.email "fake@email.com"
 git config --global user.name "Fake name"
 git config --global user.signingkey $KEY_FINGERPRINT
 git tag -s -m 'Hello World!' test-tag HEAD
