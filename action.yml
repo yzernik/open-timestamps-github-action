@@ -1,7 +1,7 @@
-name: 'Container Action Template'
-description: 'Get started with Container actions'
-author: 'GitHub'
-inputs: 
+name: 'OpenTimestamps Github Action'
+description: 'Timestamp your git tags on the Bitcoin blockchain'
+author: 'Jonathan Zernik'
+inputs:
   myInput:
     description: 'Input to use'
     default: 'world'
