@@ -1,11 +1,11 @@
 #!/bin/sh -l
 
 echo "repo name: $1"
-echo "ref name: $2"
+echo "ref: $2"
 
-# Parse the tag name
-TAG_NAME=${GITHUB_REF##*/}
-echo "tag name: $TAG_NAME"
+# Parse the ref name
+REF_NAME=${GITHUB_REF##*/}
+echo "ref name: $REF_NAME"
 
 # Generate GPG key
 echo "$(gpg --batch --passphrase '' --quick-generate-key "ots-action-key" rsa4096)"
@@ -17,7 +17,7 @@ git config --global user.name "OpenTimestamps Github Action"
 git config --global user.signingkey $KEY_ID
 git config --global gpg.program /ots-git-gpg-wrapper.sh
 
-TAG_NAME=$(openssl rand -hex 12)
+TAG_NAME="$(REF_NAME)-ots"
 TAG_MESSAGE="This commit belongs to repository: $2."
 
 # Create and push signed tag

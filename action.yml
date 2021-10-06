@@ -5,12 +5,12 @@ inputs:
   repoName:
     description: 'Full name of the repo'
     default: ${{ github.repository }}
-  refName:
-    description: 'Tag name that triggered build if exists'
+  ref:
+    description: 'Ref that triggered build if exists'
     default: ${{ github.event.ref }}
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.repoName }}
-    - ${{ inputs.refName }}
+    - ${{ inputs.ref }}
