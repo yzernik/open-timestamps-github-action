@@ -7,7 +7,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get \
 
 RUN pip install opentimestamps-client
 
-COPY LICENSE README.md /
+COPY LICENSE README.md ots-git-gpg-wrapper.sh /
 
 COPY entrypoint.sh /entrypoint.sh
 
