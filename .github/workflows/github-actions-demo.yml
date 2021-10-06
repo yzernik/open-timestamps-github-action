@@ -15,3 +15,6 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "Running own action: open-timestamps-github-action"
+      - name: OpenTimestamps Github Action
+        uses: yzernik/open-timestamps-github-action
