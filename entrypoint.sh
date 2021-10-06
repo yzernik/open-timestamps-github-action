@@ -14,6 +14,7 @@ git config --global user.signingkey $KEY_ID
 git config --global gpg.program /ots-git-gpg-wrapper.sh
 
 TAG_NAME=$(openssl rand -hex 12)
+TAG_MESSAGE="This commit belongs to repository: $2"
 
 #git tag $TAG_NAME
 git tag -s -m 'Hello World!' $TAG_NAME HEAD

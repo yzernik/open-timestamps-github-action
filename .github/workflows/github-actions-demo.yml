@@ -18,5 +18,3 @@ jobs:
       - run: echo "Now run my action."
       - name: Run OpenTimestamps github action
         uses: yzernik/open-timestamps-github-action@better_tag_message
-        with:
-          myInput: "fooooo"
