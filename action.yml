@@ -5,8 +5,10 @@ inputs:
   myInput:
     description: 'Input to use'
     default: 'world'
+  repoName:
+    description: 'Full name of the repo'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.myInput }}
+    - ${{ inputs.myInput inputs.repoName }}
