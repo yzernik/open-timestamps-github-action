@@ -1,9 +1,6 @@
-FROM alpine:3.10
+FROM python:3.8-slim-buster
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
-    python3
-
-RUN pip3 install opentimestamps-client
+RUN pip install opentimestamps-client
 
 COPY LICENSE README.md /
 
