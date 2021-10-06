@@ -18,7 +18,7 @@ git config --global user.email "fake@email.com"
 git config --global user.name "Fake name"
 git config --global user.signingkey $KEY_FINGERPRINT
 git config --global gpg.program gpg
-git tag -s -m 'Hello World!' test-tag HEAD
+GIT_TRACE=1 git tag -s -m 'Hello World!' test-tag HEAD
 
 TAG_NAME=$(openssl rand -hex 12)
 
