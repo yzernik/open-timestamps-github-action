@@ -27,6 +27,7 @@ git config --global user.signingkey $KEY_ID
 git config --global gpg.program /ots-git-gpg-wrapper.sh
 
 NEW_TAG_NAME="$TAG_NAME-ots"
+echo "repo: $GITHUB_REPOSITORY"
 TAG_MESSAGE="This commit belongs to repository: ${GITHUB_REPOSITORY}."
 
 # Create and push signed tag
