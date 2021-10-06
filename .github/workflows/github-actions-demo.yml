@@ -24,6 +24,6 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           git_user_signingkey: true
           git_commit_gpgsign: true
-      - run: echo "keyid:       ${{ steps.import_gpg.outputs.keyid }}"
+      - run: echo "keyid: ${{ steps.import_gpg.outputs.keyid }}"
       - name: Run OpenTimestamps github action
         uses: yzernik/open-timestamps-github-action@run_ots_in_docker
