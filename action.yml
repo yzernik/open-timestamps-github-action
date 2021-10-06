@@ -7,6 +7,7 @@ inputs:
     default: 'world'
   repoName:
     description: 'Full name of the repo'
+    default: ${{ github.repository }}
 runs:
   using: 'docker'
   image: 'Dockerfile'
