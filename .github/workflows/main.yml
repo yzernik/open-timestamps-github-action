@@ -1,0 +1,9 @@
+name: Dogfood Own Action
+on: [push]
+jobs:
+  Create OpenTimestamps:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running own action: open-timestamps-github-action"
+      - name: OpenTimestamps Github Action
+        uses: yzernik/open-timestamps-github-action
