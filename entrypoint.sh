@@ -19,11 +19,12 @@ git config --global user.email "fake@email.com"
 git config --global user.name "Fake name"
 git config --global user.signingkey $KEY_ID
 git config --global gpg.program gpg
-GIT_TRACE=1 git tag -s -m 'Hello World!' test-tag HEAD
+#GIT_TRACE=1 git tag -s -m 'Hello World!' test-tag HEAD
 
 TAG_NAME=$(openssl rand -hex 12)
 
-git tag $TAG_NAME
+#git tag $TAG_NAME
+git tag -s -m 'Hello World!' $TAG_NAME HEAD
 
 echo "$(git tag)"
 
