@@ -26,10 +26,10 @@ git config --global user.name "OpenTimestamps Github Action"
 git config --global user.signingkey $KEY_ID
 git config --global gpg.program /ots-git-gpg-wrapper.sh
 
-TAG_NAME="$TAG_NAME-ots"
+NEW_TAG_NAME="$TAG_NAME-ots"
 TAG_MESSAGE="This commit belongs to repository: $2."
 
 # Create and push signed tag
-git tag -s -m "$TAG_MESSAGE" $TAG_NAME HEAD
+git tag -s -m "$TAG_MESSAGE" $NEW_TAG_NAME HEAD
 echo "$(git tag)"
-git push origin $TAG_NAME
+git push origin $NEW_TAG_NAME
