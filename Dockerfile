@@ -1,6 +1,6 @@
 FROM python:3.8-slim-buster
 
-RUN apk add python3-dev
+RUN apt-get install python3-dev
 
 RUN pip install opentimestamps-client
 
