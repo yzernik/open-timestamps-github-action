@@ -2,11 +2,13 @@
 
 echo "repo name: $1"
 echo "ref: $2"
+echo "GITHUB_REF: $GITHUB_REF"
 
-if [ -z "$2" ]
+# Exit if ref is not a tag
+if [[ $2 =~ ^refs/tags* ]]
 then
-    echo "ref is empty"
-    exit 1
+    echo "ref is not a tag."
+    exit 0
 fi
 
 # Parse the ref name
