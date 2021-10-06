@@ -1,6 +1,7 @@
 #!/bin/sh -l
 
 echo "repo name: $1"
+echo "tag name: $2"
 
 # Generate GPG key
 echo "$(gpg --batch --passphrase '' --quick-generate-key "ots-action-key" rsa4096)"
