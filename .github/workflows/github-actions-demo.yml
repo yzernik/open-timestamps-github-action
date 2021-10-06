@@ -16,5 +16,14 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: echo "Now run my action."
+      -
+        name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v4
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+      - run: echo "keyid:       ${{ steps.import_gpg.outputs.keyid }}"
       - name: Run OpenTimestamps github action
         uses: yzernik/open-timestamps-github-action@run_ots_in_docker
