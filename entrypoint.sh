@@ -7,7 +7,7 @@ echo "hello $1"
 # echo "$(git status)"
 # echo "$(git log)"
 
-$TAG_NAME = $(openssl rand -base64 12)
+TAG_NAME = $(openssl rand -base64 12)
 
 git tag $TAG_NAME
 
