@@ -17,7 +17,7 @@ git config --global user.name "OpenTimestamps Github Action"
 git config --global user.signingkey $KEY_ID
 git config --global gpg.program /ots-git-gpg-wrapper.sh
 
-TAG_NAME="$(REF_NAME)-ots"
+TAG_NAME="$REF_NAME-ots"
 TAG_MESSAGE="This commit belongs to repository: $2."
 
 # Create and push signed tag
