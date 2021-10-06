@@ -8,7 +8,7 @@ echo "hello $1"
 # echo "$(git log)"
 
 # # Generate GPG key
-echo "$(gpg --batch --passphrase '' --quick-generate-key "example-key" rsa4097 cert never)"
+echo "$(gpg --batch --passphrase '' --quick-generate-key "example-14" rsa4096)"
 # echo "$(gpg --list-secret-keys --keyid-format=long)"
 echo "$(gpg --list-keys --with-colons  | awk -F: '/fpr:/ {print $10}')"
 echo "$(gpg --list-secret-keys --keyid-format=long --with-colons | awk -F: '/sec:u:4096:1:/ {print $5}')"
