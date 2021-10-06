@@ -17,4 +17,4 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: echo "Now run my action."
       - name: Run OpenTimestamps github action
-        uses: yzernik/open-timestamps-github-action@main
+        uses: yzernik/open-timestamps-github-action@use_wait_option
