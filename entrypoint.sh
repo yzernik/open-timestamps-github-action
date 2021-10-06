@@ -9,7 +9,8 @@ echo "hello $1"
 
 # # Generate GPG key
 echo "$(gpg --batch --passphrase '' --quick-generate-key "example-key" rsa4097 cert never)"
-echo "$(gpg --list-secret-keys --keyid-format=long)"
+# echo "$(gpg --list-secret-keys --keyid-format=long)"
+echo "$(gpg --list-keys --with-colons  | awk -F: '/fpr:/ {print $10}')"
 
 TAG_NAME=$(openssl rand -hex 12)
 
