@@ -4,7 +4,7 @@ echo "repo name: $1"
 echo "ref name: $2"
 
 # Parse the tag name
-"TAG_NAME=${GITHUB_REF#refs/*/}"
+"TAG_NAME=${GITHUB_REF#refs/tags/*}"
 echo "tag name: $TAG_NAME"
 
 # Generate GPG key
