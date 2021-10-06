@@ -1,6 +1,16 @@
-FROM alpine:3.10
+FROM python:3.8-slim-buster
 
-COPY LICENSE README.md /
+RUN DEBIAN_FRONTEND=noninteractive apt-get \
+    update && \
+    apt-get install -y \
+    build-essential \
+    git \
+    openssl \
+    gnupg
+
+RUN pip install opentimestamps-client
+
+COPY LICENSE README.md ots-git-gpg-wrapper.sh /
 
 COPY entrypoint.sh /entrypoint.sh
 
