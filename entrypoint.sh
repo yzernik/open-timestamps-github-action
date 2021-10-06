@@ -1,7 +1,11 @@
 #!/bin/sh -l
 
 echo "repo name: $1"
-echo "tag name: $2"
+echo "ref name: $2"
+
+# Parse the tag name
+"TAG_NAME=${GITHUB_REF#refs/*/}"
+echo "tag name: $TAG_NAME"
 
 # Generate GPG key
 echo "$(gpg --batch --passphrase '' --quick-generate-key "ots-action-key" rsa4096)"
