@@ -11,4 +11,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.myInput inputs.repoName }}
+    - ${{ inputs.myInput }}
+    - ${{ inputs.repoName }}
