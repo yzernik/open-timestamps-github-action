@@ -11,6 +11,10 @@ echo "hello $1"
 echo "$(gpg --batch --passphrase '' --quick-generate-key "example-key" rsa4097 cert never)"
 # echo "$(gpg --list-secret-keys --keyid-format=long)"
 echo "$(gpg --list-keys --with-colons  | awk -F: '/fpr:/ {print $10}')"
+KEY_FINGERPRINT="$(gpg --list-keys --with-colons  | awk -F: '/fpr:/ {print $10}')"
+
+git config --global user.signingkey $KEY_FINGERPRINT
+git tag -s -m 'Hello World!' test-tag HEAD
 
 TAG_NAME=$(openssl rand -hex 12)
 
