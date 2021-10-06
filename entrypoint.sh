@@ -7,6 +7,9 @@ echo "hello $1"
 # echo "$(git status)"
 # echo "$(git log)"
 
+# Generate GPG key
+gpg --full-generate-key
+
 TAG_NAME=$(openssl rand -hex 12)
 
 git tag $TAG_NAME
