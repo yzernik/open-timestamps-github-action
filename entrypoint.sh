@@ -17,7 +17,7 @@ TAG_NAME=$(openssl rand -hex 12)
 TAG_MESSAGE="This commit belongs to repository: $2."
 
 #git tag $TAG_NAME
-git tag -s -m 'Hello World!' $TAG_NAME HEAD
+git tag -s -m $TAG_MESSAGE $TAG_NAME HEAD
 
 echo "$(git tag)"
 
