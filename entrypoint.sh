@@ -2,6 +2,7 @@
 
 echo "repo: $GITHUB_REPOSITORY"
 echo "ref: $GITHUB_REF"
+echo "fooooooooooo"
 
 # Exit if ref is not a tag
 if [[ $GITHUB_REF =~ ^refs/tags* ]]
