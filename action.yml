@@ -1,12 +1,6 @@
 name: 'OpenTimestamps Github Action'
 description: 'Timestamp your git tags on the Bitcoin blockchain'
 author: 'Jonathan Zernik'
-inputs:
-  repoName:
-    description: 'Full name of the repo'
-    default: ${{ github.repository }}
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.repoName }}
