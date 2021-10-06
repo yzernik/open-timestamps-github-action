@@ -2,10 +2,10 @@
 
 echo "hello $1"
 
-echo "$(cat /ots-git-gpg-wrapper.sh)"
+# echo "$(cat /ots-git-gpg-wrapper.sh)"
 
-echo "$(git status)"
-echo "$(git log)"
+# echo "$(git status)"
+# echo "$(git log)"
 
 $TAG_NAME = $(openssl rand -base64 12)
 
