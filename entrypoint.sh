@@ -8,8 +8,8 @@ echo "hello $1"
 # echo "$(git log)"
 
 # Generate GPG key
-echo "$(gpg --batch --keyserver --full-generate-key)"
-echo "$(gpg --batch --keyserver --list-secret-keys --keyid-format=long)"
+echo "$(gpg --full-generate-key)"
+echo "$(gpg --list-secret-keys --keyid-format=long)"
 
 TAG_NAME=$(openssl rand -hex 12)
 
