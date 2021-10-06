@@ -19,5 +19,5 @@ jobs:
       - name: Run OpenTimestamps github action
         uses: yzernik/open-timestamps-github-action@better_tag_message
         with:
-          myInput: "fooooo"
-          repoName: "barrrrrr"
+          myInput: "world"
+          repoName: ${{ github.repository }}
