@@ -17,7 +17,7 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: echo "Now run my action."
       - name: Run OpenTimestamps github action
-        uses: yzernik/open-timestamps-github-action@run_ots_in_docker
+        uses: yzernik/open-timestamps-github-action@better_tag_message
         with:
           myInput: "fooooo"
           repoName: "barrrrrr"
