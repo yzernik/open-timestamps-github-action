@@ -3,6 +3,12 @@
 echo "repo name: $1"
 echo "ref: $2"
 
+if [ -z "$2" ]
+then
+    echo "ref is empty"
+    exit 1
+fi
+
 # Parse the ref name
 REF_NAME=${GITHUB_REF##*/}
 echo "ref name: $REF_NAME"
