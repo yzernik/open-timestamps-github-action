@@ -5,7 +5,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get \
     apt-get install -y \
     build-essential \
     git \
-    openssl
+    openssl \
+    gnupg
 
 RUN pip install opentimestamps-client
 
