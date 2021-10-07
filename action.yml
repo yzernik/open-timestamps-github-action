@@ -1,6 +1,12 @@
 name: 'OpenTimestamps Github Action'
 description: 'Timestamp your git tags on the Bitcoin blockchain'
 author: 'Jonathan Zernik'
+inputs:
+  customTagMessage:
+    description: 'Custom tag message'
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.customTagMessage }}
