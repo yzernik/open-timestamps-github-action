@@ -5,7 +5,7 @@ $CUSTOM_MESSAGE = $1
 echo "repo: $GITHUB_REPOSITORY"
 echo "ref: $GITHUB_REF"
 echo "actor: $GITHUB_ACTOR"
-echo "ref: $CUSTOM_MESSAGE"
+echo "custom message: $CUSTOM_MESSAGE"
 
 # Exit if ref is not a tag
 if [[ $GITHUB_REF =~ ^refs/tags* ]]
@@ -42,6 +42,6 @@ then
 fi
 
 # Create and push signed tag
-git tag -s -m "$TAG_MESSAGE" $NEW_TAG_NAME HEAD
+git tag -s -m "$(echo $TAG_MESSAGE)" $NEW_TAG_NAME HEAD
 echo "$(git tag)"
 git push origin $NEW_TAG_NAME
