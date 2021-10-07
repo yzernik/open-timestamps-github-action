@@ -42,6 +42,6 @@ then
 fi
 
 # Create and push signed tag
-git tag -s -m "$(echo $TAG_MESSAGE)" $NEW_TAG_NAME HEAD
+git tag -s -m "$(printf $TAG_MESSAGE)" $NEW_TAG_NAME HEAD
 echo "$(git tag)"
 git push origin $NEW_TAG_NAME
