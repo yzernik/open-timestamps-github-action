@@ -36,7 +36,7 @@ TAG_MESSAGE+="$(printf "\nGithub repository: $GITHUB_REPOSITORY")"
 TAG_MESSAGE+="$(printf "\nGithub actor: $GITHUB_ACTOR")"
 
 # Append custom message if exists
-if [[ -z "$CUSTOM_MESSAGE" ]]
+if [[ ! -z "$CUSTOM_MESSAGE" ]]
 then
     TAG_MESSAGE="$(printf "${TAG_MESSAGE}\n$CUSTOM_MESSAGE")"
 fi
