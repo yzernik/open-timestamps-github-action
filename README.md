@@ -18,7 +18,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - name: Run OpenTimestamps github action
-        uses: yzernik/open-timestamps-github-action@main
+        uses: yzernik/open-timestamps-github-action@v1
         with:
-          customTagMessage: "Put anything you want here."
+          customTagMessage: "Put anything you want here or nothing at all."
 ```
