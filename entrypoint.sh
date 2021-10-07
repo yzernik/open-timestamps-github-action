@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-$CUSTOM_MESSAGE = $1
+CUSTOM_MESSAGE = $1
 
 echo "repo: $GITHUB_REPOSITORY"
 echo "ref: $GITHUB_REF"
