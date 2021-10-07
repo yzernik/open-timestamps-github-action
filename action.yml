@@ -4,7 +4,7 @@ author: 'Jonathan Zernik'
 inputs:
   customTagMessage:
     description: 'Custom tag message'
-    default: ''
+    default: 'Nothing :('
 runs:
   using: 'docker'
   image: 'Dockerfile'
