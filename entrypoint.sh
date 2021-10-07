@@ -1,7 +1,11 @@
 #!/bin/bash -l
 
+$CUSTOM_MESSAGE = $1
+
 echo "repo: $GITHUB_REPOSITORY"
 echo "ref: $GITHUB_REF"
+echo "actor: $GITHUB_ACTOR"
+echo "ref: $CUSTOM_MESSAGE"
 
 # Exit if ref is not a tag
 if [[ $GITHUB_REF =~ ^refs/tags* ]]
@@ -27,7 +31,15 @@ git config --global user.signingkey $KEY_ID
 git config --global gpg.program /ots-git-gpg-wrapper.sh
 
 NEW_TAG_NAME="$TAG_NAME-ots"
-TAG_MESSAGE="This commit belongs to repository: $GITHUB_REPOSITORY."
+TAG_MESSAGE="OpenTimestamps Github Action"
+TAG_MESSAGE+="\nGithub repository: $GITHUB_REPOSITORY"
+TAG_MESSAGE+="\nGithub actor: $GITHUB_ACTOR"
+
+# Append custom message if exists
+if [[ -z "$CUSTOM_MESSAGE" ]]
+then
+    TAG_MESSAGE+="\n$CUSTOM_MESSAGE"
+fi
 
 # Create and push signed tag
 git tag -s -m "$TAG_MESSAGE" $NEW_TAG_NAME HEAD
