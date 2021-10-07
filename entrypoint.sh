@@ -1,5 +1,7 @@
 #!/bin/bash -l
 
+echo "hello $1"
+
 CUSTOM_MESSAGE = $1
 
 echo "repo: $GITHUB_REPOSITORY"
