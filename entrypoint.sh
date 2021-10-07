@@ -31,14 +31,14 @@ git config --global user.signingkey $KEY_ID
 git config --global gpg.program /ots-git-gpg-wrapper.sh
 
 NEW_TAG_NAME="$TAG_NAME-ots"
-TAG_MESSAGE="OpenTimestamps Github Action"
-TAG_MESSAGE+="\nGithub repository: $GITHUB_REPOSITORY"
-TAG_MESSAGE+="\nGithub actor: $GITHUB_ACTOR"
+TAG_MESSAGE="$(printf "OpenTimestamps Github Action")"
+TAG_MESSAGE+="$(printf "\nGithub repository: $GITHUB_REPOSITORY")"
+TAG_MESSAGE+="$(printf "\nGithub actor: $GITHUB_ACTOR")"
 
 # Append custom message if exists
 if [[ -z "$CUSTOM_MESSAGE" ]]
 then
-    TAG_MESSAGE+="\n$CUSTOM_MESSAGE"
+    TAG_MESSAGE+="$(printf "\n$CUSTOM_MESSAGE")"
 fi
 
 # Create and push signed tag
