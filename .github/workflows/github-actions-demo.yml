@@ -13,6 +13,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - name: Run OpenTimestamps github action
-        uses: yzernik/open-timestamps-github-action@main
+        uses: yzernik/open-timestamps-github-action@checkout_tag_before_making_new_tag
         with:
           customTagMessage: "Running my own action as dogfood!"
