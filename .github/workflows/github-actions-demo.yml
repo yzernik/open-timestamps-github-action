@@ -1,12 +1,17 @@
 name: CI
 on: [push]
 jobs:
-  Dogfood-Own-Action:
+  Example-Job:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+  Dogfood-Own-Action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
       - name: Run OpenTimestamps github action
         uses: yzernik/open-timestamps-github-action@main
         with:
