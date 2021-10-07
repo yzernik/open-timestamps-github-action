@@ -41,6 +41,9 @@ then
     TAG_MESSAGE="$(printf "${TAG_MESSAGE}\n$CUSTOM_MESSAGE")"
 fi
 
+# Checkout the tag
+git checkout $TAG_NAME
+
 # Create and push signed tag
 git tag -s -m "$TAG_MESSAGE" $NEW_TAG_NAME HEAD
 echo "$(git tag)"
