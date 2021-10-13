@@ -65,7 +65,7 @@ Optionally include a tor socks5-proxy in your script:
     --socks5-proxy "<PROXY_HOST>:<PROXY_PORT>" \
 ```
 
-Configure your git to use the new script for PGP signatures:
+Configure your git to use the new script as the GPG program:
 
 ```
 git config --global gpg.program <path to ots-git-gpg-wrapper.sh>
